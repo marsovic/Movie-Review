@@ -63,8 +63,6 @@ namespace ProjetECE
             MoviesViewModel dataContext = (MoviesViewModel)this.DataContext;
 
             UpdateMovieCards(dataContext.UpdateMovies(title: "Test de la fonction"));
-
-
         }
 
         private void RemoveDockPanelElement()
@@ -105,16 +103,17 @@ namespace ProjetECE
 
         private void MovieCard_OnCardClickedEvent(string id)
         {
-            //Juste pour les tests cet objet :
-            MovieCard movie = new MovieCard();
+            Movie movie = new Movie(
+                    id: "123456",
+                    title: "Hugo a la rescousse",
+                    releaseDate: "13/02/2020",
+                    summary: "Un jeune dev se voit confie la tache d'aiser son ami",
+                    pic: null
+                );
 
-            movie.Id = id;
-            movie.Title = "Fast And Furious 3";
-            movie.ReleaseDate = "20 december 2019";
-            movie.Resume = "Third Movie";
-            movie.Pic = "/Resources/Images/fast.jpeg";
 
-            var movieWindow = new MovieWindow(movie);
+            MovieWindow movieWindow = new MovieWindow(movie);
+
             movieWindow.Show();
         }
     }
