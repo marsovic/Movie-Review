@@ -1,0 +1,29 @@
+﻿<Application x:Class="ProjetECE.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ProjetECE"
+             
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="BangersFont">
+            <Setter 
+                Property="TextElement.FontFamily"
+                Value="/Fonts/#Bangers"
+            />
+        </Style>
+        <Style x:Key="BebasNeueFont">
+            <Setter 
+                Property="TextElement.FontFamily"
+                Value="/Fonts/#Bebas Neue"
+            />
+        </Style>
+        <Style
+            x:Key="UbuntuFont"
+        >
+            <Setter 
+                Property="TextElement.FontFamily"    
+                Value="/Fonts/#Ubuntu"
+            />
+        </Style>
+    </Application.Resources>
+</Application>

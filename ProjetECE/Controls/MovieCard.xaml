@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="ProjetECE.Controls.MovieCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProjetECE.Controls"
+             mc:Ignorable="d"
+             Name="MovieCardItem"
+             d:DesignHeight="180" d:DesignWidth="340">
+    <Border
+        Height="180"
+        Width="340"
+        Margin="10 0 10 0"
+    >
+        <Border.Effect>
+            <DropShadowEffect />
+        </Border.Effect>
+        <StackPanel
+        Orientation="Horizontal"
+        
+    >
+            <StackPanel.Background>
+                <SolidColorBrush Color="White" />
+            </StackPanel.Background>
+            <Image 
+           Source="{Binding Pic, ElementName=MovieCardItem}"
+           Stretch="Fill" 
+           Width="120"
+        />
+            <Canvas>
+                <StackPanel
+                Width="220"
+                Height="180" 
+            >
+                    <TextBlock
+                Style="{StaticResource BebasNeueFont}"
+                FontSize="15"
+                Margin="5 5 0 0"
+                Text="{Binding Title, ElementName=MovieCardItem}"        
+            />
+                    <TextBlock
+                Style="{StaticResource UbuntuFont}"
+                FontSize="10"
+                Margin="5 0 0 0"
+                Text="{Binding ReleaseDate, ElementName=MovieCardItem }"
+                >
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="Gray" />
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                    <TextBlock
+                Style="{StaticResource UbuntuFont}"
+                VerticalAlignment="Stretch"
+                Margin="5 20 5 0"
+                FontSize="10"
+                TextWrapping="Wrap"
+                Text="{Binding Resume, ElementName=MovieCardItem}"
+                >
+                        <TextBlock.Foreground>
+                            <SolidColorBrush Color="Gray" />
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                </StackPanel>
+                <TextBlock
+                    Canvas.Left="0"
+                    Canvas.Bottom="0"
+                    Width="220"
+                    TextAlignment="Center"
+                    PreviewMouseDown="TextBlock_PreviewMouseDown"
+                >
+                    <TextBlock.Background>
+                        <SolidColorBrush Color="Black"/>
+                    </TextBlock.Background>
+                    <TextBlock.Foreground>
+                        <SolidColorBrush Color="White" />
+                    </TextBlock.Foreground>
+                    See More
+                </TextBlock>
+            </Canvas>
+        </StackPanel>
+    </Border>
+</UserControl>
